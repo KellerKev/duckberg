@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 dependencies = [
-  "pyiceberg[duckdb,glue,s3fs]==0.7.1",
+  "pyiceberg[duckdb,glue,s3fs]==0.8.0",
   "pandas==2.2.3",
   "sqlparse==0.4.4"
 ]
