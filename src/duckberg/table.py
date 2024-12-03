@@ -13,9 +13,9 @@ class DuckBergTable(Table):
     """
 
     def __init__(
-        self, name: Name, metadata: TableMetadata, metadata_location: str, io: FileIO, catalog: Catalog
+        self, identifier: Identifier, metadata: TableMetadata, metadata_location: str, io: FileIO, catalog: Catalog
     ) -> None:
-        super().__init__(name, metadata, metadata_location, io, catalog)
+        super().__init__(identifier, metadata, metadata_location, io, catalog)
         self.partitions = None
 
     @classmethod
