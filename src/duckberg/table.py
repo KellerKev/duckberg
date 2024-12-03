@@ -13,14 +13,14 @@ class DuckBergTable(Table):
     """
 
     def __init__(
-        self, identifier: Identifier, metadata: TableMetadata, metadata_location: str, io: FileIO, catalog: Catalog
+        self, name: Name, metadata: TableMetadata, metadata_location: str, io: FileIO, catalog: Catalog
     ) -> None:
-        super().__init__(identifier, metadata, metadata_location, io, catalog)
+        super().__init__(name, metadata, metadata_location, io, catalog)
         self.partitions = None
 
     @classmethod
     def from_pyiceberg_table(cls, table: Table):
-        return cls(table.identifier, table.metadata, table.metadata_location, table.io, table.catalog)
+        return cls(table.name, table.metadata, table.metadata_location, table.io, table.catalog)
 
     def precomp_partitions(self):
         if self.spec().is_unpartitioned():
